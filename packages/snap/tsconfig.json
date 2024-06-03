@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+
+    "declaration": true,
+    "inlineSourceMap": true,
+    "incremental": false,
+    "removeComments": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"]
+}

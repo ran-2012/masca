@@ -1,0 +1,93 @@
+{
+  "name": "@blockchain-lab-um/monorepo",
+  "private": true,
+  "description": "Snap for managing VCs and VPs in MetaMask",
+  "keywords": [
+    "MetaMask",
+    "Snaps",
+    "SSI",
+    "VC",
+    "Verifiable Credential",
+    "VP",
+    "Verifiable Presentation",
+    "DID:ETHR",
+    "Veramo"
+  ],
+  "homepage": "https://github.com/blockchain-lab-um/Masca",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blockchain-lab-um/masca.git"
+  },
+  "license": "(Apache-2.0 AND MIT)",
+  "author": {
+    "name": "Blockchain Lab:UM",
+    "email": "blockchain-lab@um.si",
+    "url": "https://blockchain-lab.um.si"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/**/*",
+    "libs/**/*"
+  ],
+  "scripts": {
+    "build": "pnpm nx run-many --target=build",
+    "build:docker": "./scripts/build-docker.sh",
+    "docker:build": "docker build . -t blockchain-lab-um/masca",
+    "lint": "biome check --config-path configs . && pnpm nx run-many --target=lint",
+    "lint:fix": "biome check --config-path configs --apply . && pnpm nx run-many --target=lint:fix",
+    "prepare": "is-ci || husky install",
+    "test": "pnpm nx run-many --target=test",
+    "test:ci": "pnpm nx run-many --target=test:ci",
+    "test:cron": "cross-env CRON=true pnpm nx run-many --target=test:cron"
+  },
+  "dependencies": {
+    "@changesets/cli": "2.27.1",
+    "ffjavascript": "^0.3.0",
+    "snarkjs": "^0.7.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@changesets/changelog-github": "0.5.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@nx/devkit": "19.0.2",
+    "@nx/jest": "19.0.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.11",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "execa": "^9.0.2",
+    "husky": "^9.0.11",
+    "is-ci": "^3.0.1",
+    "jest-extended": "^4.0.2",
+    "lint-staged": "^15.2.2",
+    "nx": "19.0.2",
+    "nx-cloud": "^18.0.1",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.0",
+  "engines": {
+    "node": ">=20.13.1"
+  },
+  "volta": {
+    "node": "20.13.1",
+    "pnpm": "9.1.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@digitalbazaar/http-client@1.2.0": "patches/@digitalbazaar__http-client@1.2.0.patch",
+      "intl@1.2.5": "patches/intl@1.2.5.patch",
+      "cross-fetch@3.1.8": "patches/cross-fetch@3.1.8.patch",
+      "cross-fetch@4.0.0": "patches/cross-fetch@4.0.0.patch",
+      "@ceramicnetwork/common@2.30.0": "patches/@ceramicnetwork__common@2.30.0.patch",
+      "@changesets/assemble-release-plan@6.0.0": "patches/@changesets__assemble-release-plan@6.0.0.patch",
+      "did-jwt@6.11.6": "patches/did-jwt@6.11.6.patch",
+      "@iden3/js-jsonld-merklization@1.2.0": "patches/@iden3__js-jsonld-merklization@1.2.0.patch",
+      "@metamask/snaps-sdk@3.2.0": "patches/@metamask__snaps-sdk@3.2.0.patch",
+      "did-jwt@8.0.4": "patches/did-jwt@8.0.4.patch"
+    },
+    "allowNonAppliedPatches": false
+  }
+}

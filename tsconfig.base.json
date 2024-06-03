@@ -1,0 +1,20 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+
+    "pretty": true
+  },
+  "exclude": ["node_modules", "dist"],
+  "files": ["jest-extended.d.ts"]
+}
