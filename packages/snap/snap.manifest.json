@@ -1,10 +1,10 @@
 {
-  "version": "1.3.0-beta.2",
+  "version": "1.3.0-ran",
   "description": "Snap for managing VCs and VPs in MetaMask",
-  "proposedName": "Masca",
+  "proposedName": "Masca-Ran-Test",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blockchain-lab-um/masca.git"
+    "url": "https://github.com/ran-2012/masca.git"
   },
   "source": {
     "location": {
@@ -26,7 +26,7 @@
       "./files/circuits/credentialAtomicQuerySigV2/circuit_final.zkey",
       "./files/circuits/credentialAtomicQuerySigV2/verification_key.json"
     ],
-    "shasum": "aMZWyWUE0ZM4wBI4h59vCabmQZbw60T/AbxtYYZ2208="
+    "shasum": "/mGt+BlEnrdAEGARSUO7a86r+tfz1WA5O1fj0PomAEQ="
   },
   "initialPermissions": {
     "endowment:ethereum-provider": {},
